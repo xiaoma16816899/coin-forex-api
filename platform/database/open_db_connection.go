@@ -10,7 +10,7 @@ import (
 // Queries struct for collect all app queries.
 type DB struct {
 	*gorm.DB
-	Forex *repositories.Forex // load queries from User model
+	Forex *repositories.Trading // load queries from User model
 }
 
 // OpenDBConnection func for opening database connection.
@@ -40,6 +40,6 @@ func OpenDBConnection() (*DB, error) {
 
 	return &DB{
 		DB:    db,
-		Forex: repositories.AdminUserRepo(db), // add self-create-repo
+		Forex: repositories.TradingRepo(db), // add self-create-repo
 	}, nil
 }
