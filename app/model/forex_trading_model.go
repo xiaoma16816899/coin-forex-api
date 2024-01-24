@@ -1,6 +1,7 @@
 package model
 
 type ForexTradingModel struct {
+	ID                   uint64  `gorm:"PRIMARY_KEY;AUTO_INCREMENT;NOT NULL"`
 	ClosePrice           float64 `json:"close_price"`
 	OpeningPrice         float64 `json:"opening_price"`
 	HighPrice            float64 `json:"high_price"`
