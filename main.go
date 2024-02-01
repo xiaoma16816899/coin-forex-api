@@ -6,12 +6,12 @@ import (
 
 	"github.com/gofiber/fiber/v2"
 	"github.com/joho/godotenv"
-	"github.com/xiaoma/trading/app/model"
-	mdware "github.com/xiaoma/trading/middleware"
-	configs "github.com/xiaoma/trading/pkg/config"
-	"github.com/xiaoma/trading/pkg/router"
-	"github.com/xiaoma/trading/platform/database"
 	gormLogger "gorm.io/gorm/logger"
+	"server.com/app/model"
+	mdware "server.com/middleware"
+	configs "server.com/pkg/config"
+	"server.com/pkg/router"
+	"server.com/platform/database"
 )
 
 func loadEnv() {
@@ -32,7 +32,7 @@ func autoMigrateDb() {
 	db.Logger = gormLogger.Default.LogMode(gormLogger.Info)
 
 	log.Println("Running Migrations")
-	db.AutoMigrate(&model.ForexTradingModel{})
+	db.AutoMigrate(&model.ForexTradingModel{}, &model.User{})
 
 	log.Println("Running Migrations end")
 

@@ -15,11 +15,10 @@ func ConnectionURLBuilder(n string) string {
 	case "mysql":
 		// URL for Mysql connection.
 		url = fmt.Sprintf(
-			"%s:%s@tcp(%s:%s)/%s?parseTime=true",
+			"%s:%s@tcp(%s)/%s",
 			os.Getenv("DB_USER"),
 			os.Getenv("DB_PASSWORD"),
 			os.Getenv("DB_HOST"),
-			os.Getenv("DB_PORT"),
 			os.Getenv("DB_NAME"),
 		)
 	case "redis":

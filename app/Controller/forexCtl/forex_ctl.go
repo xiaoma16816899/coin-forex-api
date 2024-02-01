@@ -2,8 +2,8 @@ package controller
 
 import (
 	"github.com/gofiber/fiber/v2"
-	model "github.com/xiaoma/trading/app/model"
-	"github.com/xiaoma/trading/openApi"
+	model "server.com/app/model"
+	"server.com/openApi"
 )
 
 func GetForexExChange(c *fiber.Ctx) error {

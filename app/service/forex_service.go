@@ -3,8 +3,8 @@ package service
 import (
 	"fmt"
 
-	"github.com/xiaoma/trading/app/model"
-	"github.com/xiaoma/trading/platform/database"
+	"server.com/app/model"
+	"server.com/platform/database"
 )
 
 func CreateTrading(trading *model.ForexTradingModel) error {

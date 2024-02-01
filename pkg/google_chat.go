@@ -6,7 +6,7 @@ import (
 
 	"github.com/gofiber/fiber/v2"
 	"github.com/nleeper/goment"
-	logger "github.com/xiaoma/trading/pkg/utils"
+	logger "server.com/pkg/utils/logger"
 )
 
 type Payload struct {

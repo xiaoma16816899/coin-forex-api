@@ -2,7 +2,7 @@ package crudRoute
 
 import (
 	"github.com/gofiber/fiber/v2"
-	tradingCRUDCtl "github.com/xiaoma/trading/app/Controller/tradingCRUD"
+	tradingCRUDCtl "server.com/app/Controller/tradingCRUD"
 )
 
 func SetupTradingCURDRouter(router fiber.Router) {

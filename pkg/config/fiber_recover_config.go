@@ -5,9 +5,9 @@ import (
 
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/recover"
-	googleChat "github.com/xiaoma/trading/pkg"
-	"github.com/xiaoma/trading/pkg/types"
-	logger "github.com/xiaoma/trading/pkg/utils"
+	googleChat "server.com/pkg"
+	"server.com/pkg/types"
+	logger "server.com/pkg/utils/logger"
 )
 
 // https://docs.gofiber.io/api/middleware/recover

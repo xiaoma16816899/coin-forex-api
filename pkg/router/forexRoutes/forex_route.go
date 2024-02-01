@@ -2,7 +2,7 @@ package forexRoutes
 
 import (
 	"github.com/gofiber/fiber/v2"
-	controller "github.com/xiaoma/trading/app/Controller/forexCtl"
+	controller "server.com/app/Controller/forexCtl"
 )
 
 func SetupForexRouter(router fiber.Router) {

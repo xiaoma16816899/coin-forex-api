@@ -15,3 +15,4 @@ func CorsConfig() cors.Config {
 		AllowMethods:     "GET,POST,HEAD,PUT,DELETE,PATCH,OPTIONS",
 	}
 }
+ 

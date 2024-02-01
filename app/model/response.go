@@ -2,7 +2,7 @@ package model
 
 import (
 	"github.com/gofiber/fiber/v2"
-	"github.com/xiaoma/trading/pkg/utils"
+	"server.com/pkg/utils"
 )
 
 type Response struct {

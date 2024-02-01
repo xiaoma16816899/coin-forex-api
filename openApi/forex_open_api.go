@@ -6,7 +6,7 @@ import (
 	"io"
 	"net/http"
 
-	"github.com/xiaoma/trading/app/model"
+	"server.com/app/model"
 )
 
 const (

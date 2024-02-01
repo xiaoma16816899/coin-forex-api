@@ -2,8 +2,8 @@ package tradingCRUDCtl
 
 import (
 	"github.com/gofiber/fiber/v2"
-	"github.com/xiaoma/trading/app/model"
-	"github.com/xiaoma/trading/app/service"
+	"server.com/app/model"
+	"server.com/app/service"
 )
 
 type params struct {

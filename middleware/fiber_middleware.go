@@ -5,7 +5,7 @@ import (
 	"github.com/gofiber/fiber/v2/middleware/cors"
 	"github.com/gofiber/fiber/v2/middleware/logger"
 	"github.com/gofiber/fiber/v2/middleware/recover"
-	configs "github.com/xiaoma/trading/pkg/config"
+	configs "server.com/pkg/config"
 )
 
 // FiberMiddleware provide Fiber's built-in middlewares.

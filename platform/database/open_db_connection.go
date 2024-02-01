@@ -3,14 +3,14 @@ package database
 import (
 	"os"
 
-	repositories "github.com/xiaoma/trading/app/repository"
+	repositories "server.com/app/repository"
 	"gorm.io/gorm"
 )
 
 // Queries struct for collect all app queries.
 type DB struct {
 	*gorm.DB
-	Forex *repositories.Trading // load queries from User model
+	Trading *repositories.Trading // load queries from User model
 }
 
 // OpenDBConnection func for opening database connection.
@@ -40,6 +40,6 @@ func OpenDBConnection() (*DB, error) {
 
 	return &DB{
 		DB:    db,
-		Forex: repositories.TradingRepo(db), // add self-create-repo
+		Trading: repositories.TradingRepo(db), // add self-create-repo
 	}, nil
 }
