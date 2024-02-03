@@ -3,6 +3,7 @@ package models
 /*
 Status: 全部, 正常, 禁用, 禁止提现, 禁止下单, 禁止提现和下单, 禁止团队返佣
 */
+// 用户列表
 type User struct {
 	BaseModel
 	Type              int     `json:"type"`
@@ -15,7 +16,7 @@ type User struct {
 	UserName          string  `json:"user_name"`
 	NickName          string  `json:"nick_name"`
 	Password          string  `json:"_"`
-	FundPassword      string  `json:"_"`
+	FundPassword      string  `json:"-"`
 	Avatar            string  `json:"avatar"`
 	AreaCode          int     `json:"area_code"`
 	Mobile            string  `json:"mobile"`

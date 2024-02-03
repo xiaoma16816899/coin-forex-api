@@ -1,5 +1,6 @@
 package models
 
+// 用户IP记录 (全段)
 type UserIPAddress []struct {
 	BaseModel
 	UserID   int    `json:"user_id"`

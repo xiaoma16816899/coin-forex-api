@@ -1,5 +1,6 @@
 package models
 
+// 用户银行卡
 type UserBank struct {
 	BaseModel
 	UserID      int    `json:"user_id"`

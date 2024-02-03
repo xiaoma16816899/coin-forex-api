@@ -22,19 +22,17 @@ type ResponseError = struct {
 }
 
 const (
-	ERROR                 = 7
 	SUCCESS               = 0
-	NOT_FOUND             = fiber.StatusNotFound
-	INVALID_JSON          = 400
-	INVALID_ROLE          = -10000
-	CONFLICT_STATUS       = fiber.StatusConflict
-	INTERNAL_SERVER_ERROR = fiber.StatusInternalServerError
-	STATUS_UNAUTHORIZED   = fiber.StatusUnauthorized
-	BAD_REQUEST           = -413
-	OWNER_NOT_FOUND       = 9001
-	INVALID_TOKEN         = 467
-	INVALID_IP_ADDRESS    = -10010
-	INVALID_CHARACTER     = 511
+	INVALID_JSON          = -1
+	ERROR                 = -2
+	INVALID_ROLE          = -3
+	NOT_FOUND             = -4
+	CONFLICT_STATUS       = -5
+	BAD_REQUEST           = -5000
+	OWNER_NOT_FOUND       = -10000
+	INVALID_TOKEN         = -20000
+	INVALID_IP_ADDRESS    = -30000
+	INTERNAL_SERVER_ERROR = -50000
 )
 
 func Result(code int, data interface{}, msg string, c *fiber.Ctx) error {
@@ -100,7 +98,7 @@ func FailWithMessage(code int, message string, c *fiber.Ctx) error {
 	return ErrorResult(code, message, c)
 }
 
-// fobided
+// forboded
 func Forbidden(code int, message string, c *fiber.Ctx) error {
 	c.Status(416)
 	c.Request().Header.Add("Backed-Log", "yes")

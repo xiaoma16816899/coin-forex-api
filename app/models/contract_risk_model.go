@@ -1,5 +1,6 @@
 package models
 
+// 秒合约风控
 type ContractRisk []struct {
 	BaseModel
 	UserID   int    `json:"user_id"`
