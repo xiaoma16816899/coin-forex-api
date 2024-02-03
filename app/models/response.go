@@ -5,7 +5,7 @@ import (
 	"server.com/pkg/utils"
 )
 
-type Response struct {
+type ResponseData struct {
 	Code int         `json:"code"`
 	Data interface{} `json:"data"`
 	Msg  string      `json:"msg"`
@@ -16,11 +16,7 @@ type ResponseMsg struct {
 	Msg  string `json:"msg"`
 }
 
-type ResponseError = struct {
-	Code int    `json:"code"`
-	Msg  string `json:"msg"`
-}
-
+// Define Code status
 const (
 	SUCCESS               = 0
 	INVALID_JSON          = -1
@@ -38,7 +34,7 @@ const (
 func Result(code int, data interface{}, msg string, c *fiber.Ctx) error {
 	// 开始时间
 	// c.JSON(http.StatusOK,Response{ code, data, msg })
-	var response = Response{
+	var response = ResponseData{
 		Code: code,
 		Data: data,
 		Msg:  msg,
@@ -62,7 +58,7 @@ func ResultWithMsg(code int, msg string, c *fiber.Ctx) error {
 
 func ErrorResult(code int, msg string, c *fiber.Ctx) error {
 	// 开始时间
-	var response = ResponseError{
+	var response = ResponseData{
 		Code: code,
 		Msg:  msg,
 	}
