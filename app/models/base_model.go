@@ -1,4 +1,4 @@
-package model
+package models
 
 import (
 	"bytes"
@@ -7,17 +7,14 @@ import (
 	"fmt"
 	"reflect"
 	"strconv"
-	"time"
 
 	"github.com/gofiber/fiber/v2"
-	"gorm.io/gorm"
 )
 
 type BaseModel struct {
-	ID        uint           `json:"id,omitempty" gorm:"primarykey"`
-	CreatedAt time.Time      `json:"createdAt,omitempty"`
-	UpdatedAt time.Time      `json:"updatedAt,omitempty"`
-	DeletedAt gorm.DeletedAt `json:"-" gorm:"index"`
+	ID         uint `json:"id,omitempty" gorm:"primarykey"`
+	CreateTime int  `json:"create_time"`
+	ModifyTime int  `json:"modify_time"`
 }
 
 // check json .. json, required key, number key

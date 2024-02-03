@@ -1,13 +1,13 @@
 package service
 
 import (
-	"server.com/app/model"
+	"server.com/app/models"
 	"server.com/platform/database"
 )
 
-func GetUserPaginated(page int, limit int) ([]model.User, error) {
+func GetUserPaginated(page int, limit int) ([]models.User, error) {
 	db, _ := database.OpenDBConnection()
-	var users []model.User
+	var users []models.User
 	offset := page * limit
 	sql := "SELECT * FROM user WHERE "
 
@@ -15,14 +15,14 @@ func GetUserPaginated(page int, limit int) ([]model.User, error) {
 	res := db.Raw(sql, limit, offset).Scan(&users)
 
 	if res.RowsAffected == 0 {
-		return make([]model.User, 0), nil
+		return make([]models.User, 0), nil
 	}
 	return users, nil
 }
 
-func GetUser(userId int) (model.User, error) {
+func GetUser(userId int) (models.User, error) {
 	db, _ := database.OpenDBConnection()
-	var user model.User
+	var user models.User
 	sql := "SELECT * FROM user WHERE "
 	sql = sql + " u.deleted_at IS NULL AND id = ? ;"
 	res := db.Raw(sql, userId).Find(&user)
@@ -34,13 +34,13 @@ func GetUser(userId int) (model.User, error) {
 	return user, nil
 }
 
-func CreateUser(user model.User) error {
+func CreateUser(user models.User) error {
 	db, _ := database.OpenDBConnection()
 	ok := db.Save(&user).Error
 	return ok
 }
 
-func UpdateUser(user model.User) error {
+func UpdateUser(user models.User) error {
 	db, _ := database.OpenDBConnection()
 	ok := db.Save(&user).Error
 	return ok
@@ -48,6 +48,6 @@ func UpdateUser(user model.User) error {
 
 func DeleteUser(userID int64) error {
 	db, _ := database.OpenDBConnection()
-	err := db.Where("id = ?", userID).Delete(&model.User{}).Error
+	err := db.Where("id = ?", userID).Delete(&models.User{}).Error
 	return err
 }

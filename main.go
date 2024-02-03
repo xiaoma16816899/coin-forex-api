@@ -7,7 +7,7 @@ import (
 	"github.com/gofiber/fiber/v2"
 	"github.com/joho/godotenv"
 	gormLogger "gorm.io/gorm/logger"
-	"server.com/app/model"
+	"server.com/app/models"
 	mdware "server.com/middleware"
 	configs "server.com/pkg/config"
 	"server.com/pkg/router"
@@ -32,7 +32,7 @@ func autoMigrateDb() {
 	db.Logger = gormLogger.Default.LogMode(gormLogger.Info)
 
 	log.Println("Running Migrations")
-	db.AutoMigrate(&model.ForexTradingModel{}, &model.User{})
+	db.AutoMigrate(&models.User{})
 
 	log.Println("Running Migrations end")
 
