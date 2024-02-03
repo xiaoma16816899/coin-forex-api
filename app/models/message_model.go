@@ -1,7 +1,7 @@
 package models
 
 // 站内信
-type UserMessage struct {
+type Message struct {
 	UserID   int    `json:"user_id"`
 	Title    string `json:"title"`
 	Content  string `json:"content"`
@@ -11,8 +11,8 @@ type UserMessage struct {
 	Status   int    `json:"status"`
 }
 
-type UserMessageDetail struct {
-	UserMessage
+type MessageDetail struct {
+	Message
 	User      UserInfo `json:"user"`
 	AgentList []Agent  `json:"agent_list"`
 }
