@@ -17,6 +17,6 @@ type UserVerify struct {
 
 type UserVerifyDetail struct {
 	UserVerify
-	User      UserInfo `json:"user"`
-	AgentList []Agent  `json:"agent_list"`
+	UserInfo  UserInformation `json:"user"`
+	AgentList []Agent         `json:"agent_list"`
 }

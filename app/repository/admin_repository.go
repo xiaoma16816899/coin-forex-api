@@ -5,10 +5,10 @@ import (
 )
 
 // UserQueries struct for queries from User model.
-type Trading struct {
+type Admin struct {
 	db *gorm.DB
 }
 
-func TradingRepo(db *gorm.DB) *Trading {
-	return &Trading{db}
+func AdminRepo(db *gorm.DB) *Admin {
+	return &Admin{db}
 }

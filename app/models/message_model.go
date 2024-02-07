@@ -13,6 +13,6 @@ type Message struct {
 
 type MessageDetail struct {
 	Message
-	User      UserInfo `json:"user"`
-	AgentList []Agent  `json:"agent_list"`
+	UserInfo  UserInformation `json:"user"`
+	AgentList []Agent         `json:"agent_list"`
 }

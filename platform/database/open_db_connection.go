@@ -3,14 +3,14 @@ package database
 import (
 	"os"
 
-	repositories "server.com/app/repository"
 	"gorm.io/gorm"
+	repositories "server.com/app/repository"
 )
 
 // Queries struct for collect all app queries.
 type DB struct {
 	*gorm.DB
-	Trading *repositories.Trading // load queries from User model
+	Trading *repositories.Admin // load queries from User model
 }
 
 // OpenDBConnection func for opening database connection.
@@ -39,7 +39,7 @@ func OpenDBConnection() (*DB, error) {
 	}
 
 	return &DB{
-		DB:    db,
-		Trading: repositories.TradingRepo(db), // add self-create-repo
+		DB:      db,
+		Trading: repositories.AdminRepo(db), // add self-create-repo
 	}, nil
 }

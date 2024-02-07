@@ -1,7 +1,9 @@
 package models
 
 /*
-	Status 
+    Status 0 = Reject
+	Status 1 = Approval
+	Status 2 = Padding Review
 */
 // 提现列表
 type Withdraw struct {
@@ -26,27 +28,9 @@ type Withdraw struct {
 	Nums        int    `json:"nums"`
 }
 
-type Info struct {
-	Fn          string `json:"fn"`
-	BankName    string `json:"bank_name"`
-	CardNumber  string `json:"card_number"`
-	Name        string `json:"name"`
-	BankCode    string `json:"bank_code"`
-	Branch      string `json:"branch"`
-	Currency    string `json:"currency"`
-	SwiftCode   string `json:"swift_code"`
-	Address     string `json:"address"`
-	PostCode    string `json:"post_code"`
-	AccountType string `json:"account_type"`
-	Symbol      string `json:"symbol"`
-	Rate        string `json:"rate"`
-	Fee         string `json:"fee"`
-	Fixed       string `json:"fixed"`
-}
-
 type WithdrawDetail struct {
 	Withdraw
-	CurrencyInfo Info     `json:"info"`
-	AgentList    []Agent  `json:"agent_list"`
-	User         UserInfo `json:"user"`
+	CurrencyInfo Bank            `json:"info"`
+	AgentList    []Agent         `json:"agent_list"`
+	UserInfo     UserInformation `json:"user"`
 }

@@ -51,7 +51,7 @@ type User struct {
 	RegNums           int     `json:"regNums"`
 }
 
-type UserInfo struct {
+type UserInformation struct {
 	ID       int    `json:"id"`
 	Type     int    `json:"type"`
 	Pid      string `json:"pid"`

@@ -5,7 +5,7 @@ type UserIPAddress []struct {
 	BaseModel
 	UserID   int    `json:"user_id"`
 	Title    string `json:"title"`
-	Platform string `json:"platform"`
+	Platform string `json:"platform"` // Platform store as JSON Cuz need to store 
 	IP       string `json:"ip"`
 	Host     string `json:"host"`
 	Path     string `json:"path"`

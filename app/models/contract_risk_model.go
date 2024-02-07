@@ -11,6 +11,6 @@ type ContractRisk []struct {
 
 type ContractRiskDetail struct {
 	ContractRisk
-	UserInfo  UserInfo `json:"user"`
-	AgentList []Agent  `json:"agentList"`
+	UserInfo  UserInformation `json:"user"`
+	AgentList []Agent         `json:"agentList"`
 }

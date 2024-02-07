@@ -16,6 +16,6 @@ type UserWallet struct {
 
 type UserWalletDetail struct {
 	UserWallet
-	User      UserInfo `json:"user"`
-	AgentList []Agent  `json:"agent_list"`
+	UserInfo  UserInformation `json:"user"`
+	AgentList []Agent         `json:"agent_list"`
 }
