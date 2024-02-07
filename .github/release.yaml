@@ -1,0 +1,32 @@
+name: CI
+
+on:
+  push:
+    branches: ["master"]
+
+jobs:
+  build:
+    environment: staging
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+  deployments:
+    needs: build
+    environment: staging
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to VPS
+        uses: appleboy/ssh-action@v0.1.9
+        with:
+         host: ${{ secrets.SERVER }}
+         username: ${{ secrets.SERVER_USERNAME }}
+         key: ${{ secrets.SERVER_SSH_KEY }}
+         script: |
+            cd /home/server
+            git config --local user.email "action@github.com"
+            git config --local user.name "GitHub Action"
+            git pull origin master
+            git status
+            sh ctrl.sh

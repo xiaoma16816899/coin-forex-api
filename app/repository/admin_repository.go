@@ -4,7 +4,6 @@ import (
 	"gorm.io/gorm"
 )
 
-// UserQueries struct for queries from User model.
 type Admin struct {
 	db *gorm.DB
 }
