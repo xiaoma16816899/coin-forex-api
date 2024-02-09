@@ -32,7 +32,7 @@ func autoMigrateDb() {
 	db.Logger = gormLogger.Default.LogMode(gormLogger.Info)
 
 	log.Println("Running Migrations")
-	db.AutoMigrate(&models.User{})
+	db.AutoMigrate(&models.User{}, &models.VerifyCode{})
 
 	log.Println("Running Migrations end")
 

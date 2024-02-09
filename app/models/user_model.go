@@ -47,8 +47,12 @@ type User struct {
 	Withdraw          string  `json:"withdraw"`
 	WithdrawNums      int     `json:"withdraw_nums"`
 	ProfitOrLost      float64 `json:"ks"`
-	TeamMember        Team    `json:"team"`
 	RegNums           int     `json:"regNums"`
+}
+
+type UserDetail struct {
+	User
+	TeamMember Team `json:"team"`
 }
 
 type UserInformation struct {

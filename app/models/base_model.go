@@ -13,8 +13,8 @@ import (
 
 type BaseModel struct {
 	ID         uint `json:"id,omitempty" gorm:"primarykey"`
-	CreateTime int  `json:"create_time"`
-	ModifyTime int  `json:"modify_time"`
+	CreateTime int64  `json:"create_time"`
+	ModifyTime int64  `json:"modify_time"`
 }
 
 // check json .. json, required key, number key

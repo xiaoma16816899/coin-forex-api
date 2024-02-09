@@ -1,4 +1,4 @@
-package openApi
+package openAPI
 
 const (
 	BASE_URL = "https://api.polygon.io/v2/aggs/ticker"

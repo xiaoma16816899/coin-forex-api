@@ -1,4 +1,4 @@
-package googleChat
+package pkg
 
 import (
 	"errors"

@@ -24,6 +24,7 @@ const (
 	INVALID_ROLE          = -3
 	NOT_FOUND             = -4
 	CONFLICT_STATUS       = -5
+	ERROR_INPUT           = -6
 	BAD_REQUEST           = -5000
 	OWNER_NOT_FOUND       = -10000
 	INVALID_TOKEN         = -20000
