@@ -7,9 +7,9 @@ import (
 	"strconv"
 	"time"
 
-	"server.com/pkg/utils"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm/logger"
+	"server.com/pkg/utils"
 
 	"gorm.io/gorm"
 )
@@ -35,7 +35,7 @@ func NewMysqlConnection() (*gorm.DB, error) {
 	maxLifetimeConn, _ := strconv.Atoi(os.Getenv("DB_MAX_LIFETIME_CONNECTIONS"))
 
 	// Build Mysql connection URL.
-	mysqlConnURL := utils.ConnectionURLBuilder("mysql")
+	mysqlConnURL, _ := utils.ConnectionURLBuilder("mysql")
 
 	// Define database connection for Mysql.
 	db, err := gorm.Open(mysql.Open(mysqlConnURL), &gorm.Config{

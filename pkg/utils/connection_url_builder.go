@@ -6,7 +6,7 @@ import (
 )
 
 // ConnectionURLBuilder func for building URL connection.
-func ConnectionURLBuilder(n string) string {
+func ConnectionURLBuilder(n string) (string, error) {
 	// Define URL to connection.
 	var url string
 
@@ -15,10 +15,11 @@ func ConnectionURLBuilder(n string) string {
 	case "mysql":
 		// URL for Mysql connection.
 		url = fmt.Sprintf(
-			"%s:%s@tcp(%s)/%s",
+			"%s:%s@tcp(%s:%s)/%s?parseTime=true",
 			os.Getenv("DB_USER"),
 			os.Getenv("DB_PASSWORD"),
 			os.Getenv("DB_HOST"),
+			os.Getenv("DB_PORT"),
 			os.Getenv("DB_NAME"),
 		)
 	case "redis":
@@ -39,9 +40,9 @@ func ConnectionURLBuilder(n string) string {
 		)
 	default:
 		// Return error message.
-		return ""
+		return "", fmt.Errorf("connection name '%v' is not supported", n)
 	}
 
 	// Return connection URL.
-	return url
+	return url, nil
 }
